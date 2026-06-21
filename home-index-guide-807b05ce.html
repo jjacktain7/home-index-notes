@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5, user-scalable=yes">
+    <title>雷速 · 主题内容索引</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #f5fafc;
+            color: #1a2c3a;
+            line-height: 1.65;
+            padding: 0 1rem 2.5rem;
+        }
+        .page {
+            max-width: 1120px;
+            margin: 0 auto;
+        }
+
+        /* hero */
+        .hero {
+            background: linear-gradient(135deg, #d8f0f5 0%, #e2f3f7 60%, #b8e0ea 100%);
+            border-radius: 2rem;
+            padding: 3rem 2rem 2.5rem;
+            margin: 1.5rem 0 2.8rem;
+            box-shadow: 0 8px 20px rgba(22, 94, 109, 0.08);
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 2.2rem;
+            font-weight: 600;
+            letter-spacing: -0.01em;
+            color: #0b4a5c;
+            margin-bottom: 1rem;
+        }
+        .hero p {
+            max-width: 650px;
+            margin: 0 auto 1.8rem;
+            color: #1f4a57;
+            font-size: 1.1rem;
+        }
+        .hero-link {
+            display: inline-block;
+            background: #0f6f7a;
+            color: #fff;
+            padding: 0.7rem 2.2rem;
+            border-radius: 40px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: background 0.2s;
+            box-shadow: 0 4px 10px rgba(15, 111, 122, 0.2);
+        }
+        .hero-link:hover { background: #0b5c66; }
+
+        /* 网格卡片区域 */
+        .grid-2col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.8rem;
+            margin: 2.5rem 0;
+        }
+        .card {
+            background: #ffffff;
+            border-radius: 1.5rem;
+            padding: 1.8rem 1.6rem;
+            box-shadow: 0 4px 12px rgba(0, 40, 50, 0.04);
+            border: 1px solid #d6ecf2;
+            transition: box-shadow 0.15s;
+        }
+        .card:hover { box-shadow: 0 8px 20px rgba(22, 94, 109, 0.06); }
+        .card h2 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: #0c5765;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        .card h2::before {
+            content: "▹";
+            color: #3fa8b5;
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+        .card p { color: #2b4752; margin-bottom: 0.4rem; }
+        .card .meta-note {
+            font-size: 0.9rem;
+            color: #4a717d;
+            margin-top: 0.6rem;
+            border-left: 3px solid #b3dae5;
+            padding-left: 0.8rem;
+        }
+
+        /* 说明区 & FAQ 混合布局 */
+        .info-faq-wrap {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin: 2.5rem 0 1.8rem;
+        }
+        .info-box {
+            flex: 2 1 320px;
+            background: #ffffff;
+            border-radius: 1.5rem;
+            padding: 1.8rem 1.6rem;
+            border: 1px solid #d6ecf2;
+        }
+        .info-box h3 {
+            font-size: 1.25rem;
+            color: #0b4a5c;
+            margin-bottom: 0.75rem;
+        }
+        .info-box p {
+            color: #2b4752;
+            margin-bottom: 0.8rem;
+        }
+        .faq-mini {
+            flex: 1 1 240px;
+            background: #ecf6f9;
+            border-radius: 1.5rem;
+            padding: 1.6rem 1.4rem;
+        }
+        .faq-mini h3 {
+            font-size: 1.1rem;
+            color: #0b4a5c;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #b8dde7;
+            padding-bottom: 0.4rem;
+        }
+        .faq-item {
+            margin-bottom: 1rem;
+        }
+        .faq-item strong {
+            display: block;
+            font-weight: 600;
+            color: #07505e;
+            font-size: 0.95rem;
+            margin-bottom: 0.15rem;
+        }
+        .faq-item p {
+            font-size: 0.9rem;
+            color: #2c5562;
+        }
+
+        /* 底部链接区 */
+        .footer-links {
+            margin-top: 3rem;
+            padding-top: 1.8rem;
+            border-top: 1px solid #c5e0e8;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            color: #3a6573;
+            font-size: 0.95rem;
+        }
+        .footer-links a {
+            color: #0b5f6b;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            text-decoration-color: #8cc2d0;
+        }
+        .footer-links a:hover { color: #043a44; }
+
+        /* 响应式 */
+        @media (max-width: 680px) {
+            .hero h1 { font-size: 1.8rem; }
+            .hero { padding: 2rem 1.2rem; }
+            .grid-2col { grid-template-columns: 1fr; gap: 1.2rem; }
+            .info-faq-wrap { flex-direction: column; }
+        }
+        @media (max-width: 480px) {
+            body { padding: 0 0.6rem 1.8rem; }
+            .hero { border-radius: 1.2rem; padding: 1.8rem 1rem; }
+            .card { padding: 1.4rem; }
+            .footer-links { flex-direction: column; align-items: flex-start; }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+
+    <!-- hero -->
+    <section class="hero">
+        <h1>主题索引 · 雷速</h1>
+        <p>内容、结构、节奏——围绕「雷速」所延展的信息聚合与关键说明，帮助了解主题背后的要点。</p>
+        <a class="hero-link" href="https://home-index-rayspeed.com">雷速</a>
+    </section>
+
+    <!-- 优势区 + 特点 (网格卡片) -->
+    <div class="grid-2col">
+        <div class="card">
+            <h2>信息组织方式</h2>
+            <p>通过分类索引与模块化整理，将分散的内容进行归拢。每个板块保持独立又彼此关联，减少重复查找的成本。</p>
+            <p>围绕主题关键词所建立的框架，可以快速定位到需要了解的部分，提高浏览效率。</p>
+            <div class="meta-note">结构清晰，更新节奏平稳，适合长期查阅。</div>
+        </div>
+        <div class="card">
+            <h2>使用场景参考</h2>
+            <p>适用于内容整理、主题梳理、索引页搭建等需要展示多层信息的场景。无论是个人笔记还是小型项目页，都能复用类似逻辑。</p>
+            <p>卡片网格与说明区组合的方式，让信息密度适中，不会过于拥挤。</p>
+            <div class="meta-note">移动端自适应，在不同屏幕下保持可读性。</div>
+        </div>
+    </div>
+
+    <!-- 说明区 + FAQ 摘要 -->
+    <div class="info-faq-wrap">
+        <div class="info-box">
+            <h3>关于内容结构</h3>
+            <p>本页面以落地页形式组织，但并不依赖强营销语言。内容围绕关键词背后的主题实质展开，区分出几个主要板块：概要、特点、常见疑问摘要以及相关链接。</p>
+            <p>文字风格力求平实，不渲染夸张效果。每个段落提供的信息都经过筛选，避免堆砌无实质内容的句子。</p>
+            <p>配色选择蓝绿色系，目的是使页面看起来温和、安静，同时利用卡片分割让信息区块更直观。</p>
+            <p>如果你希望引用相关资源或进一步了解索引逻辑，可以直接参考 <a href="https://home-index-rayspeed.com" style="color:#0b5f6b; text-decoration: underline;">雷速</a> 所指向的信息页面。</p>
+        </div>
+        <div class="faq-mini">
+            <h3>FAQ 摘要</h3>
+            <div class="faq-item">
+                <strong>页面主要解决什么问题？</strong>
+                <p>把分散的主题内容整理成一个清晰的索引，方便浏览者快速理解结构并定位。</p>
+            </div>
+            <div class="faq-item">
+                <strong>内容是否固定不变？</strong>
+                <p>结构保持稳定，但具体表述和案例会随着方向微调，避免模板化重复。</p>
+            </div>
+            <div class="faq-item">
+                <strong>移动端显示效果如何？</strong>
+                <p>所有区块均做了响应式适配，窄屏下卡片变为单列，阅读体验不受影响。</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 底部链接区 -->
+    <div class="footer-links">
+        <span>基于主题索引 · 内容方向：雷速</span>
+        <span>
+            <a href="https://home-index-rayspeed.com">雷速</a> — 了解更多
+        </span>
+    </div>
+
+</div>
+</body>
+</html>
